@@ -15,7 +15,7 @@ magenta = (255, 0, 255)
 orange = (255, 60, 0)
 purple = (128, 0, 128)
 
-def halloween(back=orange, sc=purple, dee=.04, spark=5):
+def halloween(back=cyan, sc=purple, dee=.06, spark=5):
     while True:
         for i in range(spark):
             wan = random.randint(0,29)
