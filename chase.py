@@ -21,7 +21,6 @@ def chase(color, direction):
 
 while True:
     chase((0,255, 255), "forward")
-    time.sleep(.01)  
 
 
 
