@@ -6,7 +6,7 @@ import random
 np = NeoPixel(board.D2, 30, auto_write = False, brightness=2)
 i = 0
 
-red = (255,0,0)
+red = (235,11,0)
 green = (0,255,0)
 blue = (0,0,255)
 yellow = (255,255,0)
