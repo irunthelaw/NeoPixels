@@ -13,7 +13,7 @@ cyan = (0,255,255)
 magenta = (255, 0, 255)
 orange = (255, 60, 0)
 purple = (128, 0, 128)
-
+black= (0,0,0)
 coloz = [red, yellow, green, cyan, blue, purple]
 
 def lightning(bg = orange, spark = purple):
@@ -111,7 +111,6 @@ while True:
     fade_out(orange)
     fade_in(purple)
     chase(purple)
-    lightning(orange)
+    lightning(black)
     spark()
-    
     
