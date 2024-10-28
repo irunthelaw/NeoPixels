@@ -5,7 +5,7 @@ import random
 
 np = NeoPixel(board.D2, 30, auto_write=False, brightness=0.5)
 
-red = (255,0,0)
+red = (255,30,0)
 green = (0,255,0)
 blue = (0,0,255)
 yellow = (255,255,0)
@@ -14,9 +14,22 @@ magenta = (255, 0, 255)
 orange = (255, 60, 0)
 purple = (128, 0, 128)
 black= (0,0,0)
+white = (255,255,255)
 coloz = [red, yellow, green, cyan, blue, purple]
 
-def lightning(bg = orange, spark = purple):
+def lightning(bg = orange, spark = orange):
+    ohh = random.randint(1,2)
+    for i in range(ohh):
+        woo = random.randint(1, 8)
+        woo = woo / 92
+        np.fill(spark)
+        np.show()
+        time.sleep(woo)
+        np.fill(bg)
+        np.show()
+        time.sleep(woo)
+        
+def lightning3(bg = white, spark = white):
     ohh = random.randint(1,2)
     for i in range(ohh):
         woo = random.randint(1, 8)
@@ -104,13 +117,62 @@ def fade_in(colors, fading = 0.025, rob = 50):
         np.show()
         time.sleep(fading)
 
+def chase3(color, direction):
+    count = 0
+    for i in range(np.n):
+        np.fill(color)
+    for i in range(np.n):
+        if (i + count) % 3 == 0:
+            np[i] = (0,0,0)
 
         
+        np.show()
+        time.sleep(0.2)  
+
+        count += 2
+        
+def lightning2(bg = purple, spark = purple):
+    ohh = random.randint(1,2)
+    for i in range(ohh):
+        woo = random.randint(1, 8)
+        woo = woo / 92
+        np.fill(spark)
+        np.show()
+        time.sleep(woo)
+        np.fill(bg)
+        np.show()
+        time.sleep(woo)
+        
+        
+def halloween(back=orange, sc=red, dee=.3, spark=15):
+    for i in range(spark):
+        wan = random.randint(0,29)
+        too = random.randint(0,29)
+        tree = random.randint(0,29)
+        np.fill(back)
+        np[wan] = sc
+        np[too] = sc
+        np[tree] = sc
+        np.show()
+        time.sleep(dee)
+  
+    
+def fire(am):
+    for i in range(am):
+        halloween(orange, red, 0.05 )
+        
+    
+    
 while True:
     me = random.choice(coloz)
+    lightning3(black)
+    fire(2)
     fade_out(orange)
     fade_in(purple)
     chase(purple)
     lightning(black)
-    spark()
+    chase(orange)
+    lightning2(black)
+    lightning3(black)
+    
     
