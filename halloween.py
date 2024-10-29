@@ -214,7 +214,7 @@ def fire(am):
 while True:
     me = random.choice(coloz)
     lightning3(black)
-    fire(2)
+    fire(3)
     fade_out(orange)
     fade_in(purple)
     chase(purple)
