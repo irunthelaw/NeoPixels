@@ -18,6 +18,13 @@ white = (255,255,255)
 coloz = [red, yellow, green, cyan, blue, purple]
 
 def lightning(bg = orange, spark = orange):
+    """
+    light flashes orange a random amount of times (1-4)
+
+    Args:
+        bg: controls the background color of the neopixel strip to orange
+        spark: changes color the spark of lightning, also orange.
+    """
     ohh = random.randint(1,2)
     for i in range(ohh):
         woo = random.randint(1, 8)
@@ -30,6 +37,13 @@ def lightning(bg = orange, spark = orange):
         time.sleep(woo)
         
 def lightning3(bg = white, spark = white):
+    """
+    light flashes orange a random amount of times (1-4)
+
+    Args:
+        bg: controls the background color of the neopixel strip to orange
+        spark: changes color the spark of lightning, also orange.
+    """
     ohh = random.randint(1,2)
     for i in range(ohh):
         woo = random.randint(1, 8)
@@ -41,23 +55,14 @@ def lightning3(bg = white, spark = white):
         np.show()
         time.sleep(woo)
 
-def fire(back=orange, sc=red, dee=.3, spark=15):
-    while True:
-        for i in range(spark):
-            wan = random.randint(0,29)
-            too = random.randint(0,29)
-            tree = random.randint(0,29)
-            np.fill(back)
-            np[wan] = sc
-            np[too] = sc
-            np[tree] = sc
-            np.show()
-            time.sleep(dee)
-            for i in range(am):
-                halloween(orange, purple, 0.05 )
-  
 
 def chase(color):
+    """
+    The color black chases the color purple.
+
+    Args:
+        color: Changes the color of the neopixel
+    """
     count = 0
     for i in range(np.n):
         np.fill(color)
@@ -75,19 +80,39 @@ def chase(color):
 
         
 def spark(back=orange, sc=purple, dee=.06, spark=5):
-        for i in range(spark):
-            wan = random.randint(0,29)
-            too = random.randint(0,29)
-            tree = random.randint(0,29)
-            np.fill(back)
-            np[wan] = sc
-            np[too] = sc
-            np[tree] = sc
-            np.show()
-            time.sleep(dee)
+    
+    """
+    Random neopixels on the led lights up.
+
+    Args:
+        back: background color
+        sc: spark color
+        dee: delay between spark
+        spark = how manty sparks at a time
+
+    """
+    for i in range(spark):
+        wan = random.randint(0,29)
+        too = random.randint(0,29)
+        tree = random.randint(0,29)
+        np.fill(back)
+        np[wan] = sc
+        np[too] = sc
+        np[tree] = sc
+        np.show()
+        time.sleep(dee)
             
             
 def fade_out(color, fading = 0.025, rob = 50):
+    
+    """
+    The color fades out to black
+
+    Args:
+        color: the color of the 
+        fading: speed of the fade
+        rob = value to divide and get the fade from
+    """
     red_rat = color[0] / rob
     red_org = color[0]
     green_rat = color[1] / rob
@@ -103,6 +128,15 @@ def fade_out(color, fading = 0.025, rob = 50):
         time.sleep(fading)
 
 def fade_in(colors, fading = 0.025, rob = 50):
+    
+    """
+    The color fades in to black
+
+    Args:
+        color: the color of the 
+        fading: speed of the fade
+        rob: value to divide and get the fade from
+    """
     red_rat = colors[0] / rob
     red_org = colors[0]
     green_rat = colors[1] / rob
@@ -117,21 +151,18 @@ def fade_in(colors, fading = 0.025, rob = 50):
         np.show()
         time.sleep(fading)
 
-def chase3(color, direction):
-    count = 0
-    for i in range(np.n):
-        np.fill(color)
-    for i in range(np.n):
-        if (i + count) % 3 == 0:
-            np[i] = (0,0,0)
 
         
-        np.show()
-        time.sleep(0.2)  
+def lightning2(bg = purple, spark = purple): #
+    
+    """
+    light flashes orange a random amount of times (1-4)
 
-        count += 2
-        
-def lightning2(bg = purple, spark = purple):
+    Args:
+        bg: controls the background color of the neopixel strip to orange
+        spark: changes color the spark of lightning, also orange.
+    """
+    
     ohh = random.randint(1,2)
     for i in range(ohh):
         woo = random.randint(1, 8)
@@ -144,7 +175,17 @@ def lightning2(bg = purple, spark = purple):
         time.sleep(woo)
         
         
-def halloween(back=orange, sc=red, dee=.3, spark=15):
+def code(back=orange, sc=red, dee=.3, spark=15):
+    """
+    Random neopixels on the led lights up red.
+
+    Args:
+        back: background color
+        sc: spark color
+        dee: delay between spark
+        spark = how manty sparks at a time
+
+    """
     for i in range(spark):
         wan = random.randint(0,29)
         too = random.randint(0,29)
@@ -158,8 +199,15 @@ def halloween(back=orange, sc=red, dee=.3, spark=15):
   
     
 def fire(am):
+    """
+    Random neopixels on the led lights up red.
+
+    Args:
+        am: how may times fire runs
+
+    """
     for i in range(am):
-        halloween(orange, red, 0.05 )
+        code(orange, red, 0.05 )
         
     
     
