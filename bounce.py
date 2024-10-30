@@ -4,7 +4,7 @@ from neopixel import NeoPixel
 
 np = NeoPixel(board.D2, 30, auto_write=False, brightness=1)
 
-red = (255,30,0)
+red = (255,00,0)
 green = (0,255,0)
 blue = (0,0,255)
 yellow = (255,255,0)
@@ -17,11 +17,17 @@ white = (255,255,255)
 
 coloz = [red, yellow, green, cyan, blue, purple]
 
-def bounce():
+def bounce(fg, bg, direction = -1):
+    g = 0
     for i in range(np.n):
-    np.fill(black)
-    np.show()
-    np[( g + 1) % np.n] 
+        np.fill(bg)
+        np.show()
+        np[(g + direction) % np.n] = bg
+        np[g % np.n] = fg
+        np.show()
+        g = (g + direction) % np.n
+        time.sleep(0.1)
+       
 
-
-bounce()
+while True:
+    bounce(red, black)
