@@ -17,17 +17,30 @@ white = (255,255,255)
 
 coloz = [red, yellow, green, cyan, blue, purple]
 
-def bounce(fg, bg, direction = -1):
+def bounce(fg, bg, bounces = 10):
     g = 0
-    for i in range(np.n):
-        np.fill(bg)
+    b = 1
+    bc = 0
+    while bc < bounces:
+        np.fill(fg)
+        np[g] = bg
+        np[g+1] = bg
+        np[g+2] = bg
+        np[g-1] = bg
+        np[g-2] = bg
         np.show()
-        np[(g + direction) % np.n] = bg
-        np[g % np.n] = fg
-        np.show()
-        g = (g + direction) % np.n
-        time.sleep(0.1)
-       
+        g += b
+        if g >= (np.n-1) or g <=0:
+            b *= -1
+            bc += 1
+        time.sleep(0.03)
+        if g >= (np.n-1) or g <=0:
+            b *= -1
+            bc += 1
+            
+            if pix + 1 == p-1:
+        
+             
 
 while True:
-    bounce(red, black)
+    bounce(red, blue)
